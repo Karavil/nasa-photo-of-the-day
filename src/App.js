@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import NasaCard from "./components/NasaCard";
 
+import { NASA_API_KEY } from "./config.js"; 
+
 import "./App.css";
 
 const App = () => {
@@ -11,7 +13,7 @@ const App = () => {
       
    }, [nasaImages])
 
-   const NASA_API = `https://api.nasa.gov/planetary/apod?api_key=`
+   const NASA_API = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
 
    return (
       <div className="App">
