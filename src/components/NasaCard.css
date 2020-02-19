@@ -1,3 +1,56 @@
-img {
-   width: 200px;
+
+.card {
+   position: relative;
+   height: 50vw;
+   overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.info {
+   width: 100%;
+   background: rgba(0, 0, 0, 0.543);
+
+   color: white;
+
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   padding: 30px 40px;
+}
+
+.left {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   height: 100%;
+   width: 30%;
+}
+
+.right {
+   width: 68%;
+}
+h2, h3, p {
+   margin: 0;
+   padding: 0;
+}
+
+h2 {
+   margin-top: 0;
+   font-size: 3vw;
+}
+
+h3 {
+   color: rgb(218, 218, 218);
+}
+
+p {
+   font-size: 1vw;
 }

@@ -12,12 +12,21 @@ const App = () => {
    const NASA_API = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
 
    const generateRandomDates = (count) => {
-      return ['2012-01-01','2011-01-01','2010-01-01','2009-01-01']
+      const lowerBound = new Date('1996-1-1').getTime();
+      const currentDate = new Date(Date.now()).getTime();
+      
+      const dates = new Set();
+      for (let i = 0; i < count; i++) {
+         const randomDate = new Date((currentDate - lowerBound) * Math.random() + lowerBound);
+         const formatted = randomDate.getFullYear() + '-' + (randomDate.getMonth() + 1) + '-' + (randomDate.getDay() + 1);
+         dates.add(formatted);
+         
+      }
+      return Array.from(dates);
    }
 
    useEffect(() => {
-      generateRandomDates(10).forEach(date => {
-         console.log(date);
+      generateRandomDates(20).forEach(date => {
          axios.get(NASA_API, {
             params: {
                hd: true,
@@ -25,9 +34,10 @@ const App = () => {
             }
          })
             .then(function (response) {
-               // handle success
-               images.push(response.data);
-               setImages([...images]);
+               
+               if (response.data.media_type === 'image') {
+                  setImages(images => [...images, response.data]);
+               }
             })
             .catch(function (error) {
                // handle error
@@ -36,18 +46,15 @@ const App = () => {
       })
    }, [])
 
+   const imageCards = images.map((image) => {
+      return (
+         <NasaCard key={image.date} title={image.title} info={image.explanation} date={image.date} imgSrc={image.hdurl} />
+      )
+   })
+
    return (
-      <div className="App">
-         {
-            images.map((image) => {
-               return (
-                  <NasaCard key={image.date} title={image.title} info={image.explanation} date={image.date} imgSrc={image.hdurl} />
-               )
-            })
-         }
-         {
-            console.log(images)
-         }
+      <div className="nasa-images">
+         {imageCards}
       </div>
    );
 }
