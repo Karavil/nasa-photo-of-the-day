@@ -8,8 +8,11 @@ const NasaCard = props => {
 
       background-color: black;
       color: white;
+      background-image: url(${props.imgSrc});
+      background-size: cover;
+      background-position: center;
 
-      height: 70vh;
+      height: 75vh;
 
       border-bottom: 2px solid grey;
 
@@ -37,16 +40,17 @@ const NasaCard = props => {
       }
 
       h3 {
+         display: inline-block;
          text-align: center;
          color: black;
-         width: 8.5rem;
+         width: auto;
          padding: 0.4rem 0.7rem;
          background: white;
          border: 2px solid black;
       }
    `
    return (
-      <Card className="card" style={{ backgroundImage: `url(${props.imgSrc})` }}>
+      <Card className="card">
          <div className="info">
             <div className="first">
                <h1>{props.title}</h1>
