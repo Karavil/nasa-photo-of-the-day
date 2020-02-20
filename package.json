@@ -7,7 +7,8 @@
     "netlify-cli": "^2.35.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
