@@ -5,9 +5,13 @@ const NasaCard = props => {
 
    const Card = styled.div`
       position: relative;
+
       background-color: black;
       color: white;
+
       height: 70vh;
+
+      border-bottom: 2px solid grey;
 
       .info {
          position: absolute;
@@ -24,22 +28,31 @@ const NasaCard = props => {
          justify-content: space-between;
          
          .first {
-            width: 24%;
+            width: 400px;
          }
          .second {
-            width: 72%;
+            width: 70%;
             text-align: right;
          }
+      }
+
+      h3 {
+         text-align: center;
+         color: black;
+         width: 8.5rem;
+         padding: 0.4rem 0.7rem;
+         background: white;
+         border: 2px solid black;
       }
    `
    return (
       <Card className="card" style={{ backgroundImage: `url(${props.imgSrc})` }}>
-         <div class="info">
-            <div class="first">
+         <div className="info">
+            <div className="first">
                <h1>{props.title}</h1>
                <h3><i>{props.date}</i></h3>
             </div>
-            <div class="second">
+            <div className="second">
                <p>{props.info}</p>
             </div>
          </div>
