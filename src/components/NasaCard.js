@@ -10,19 +10,25 @@ const NasaCard = props => {
       height: 70vh;
 
       .info {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+
          width: 100%;
          padding: 20px;
 
-         background: red;
+         background: rgba(0, 0, 0, 0.70);
 
          display: flex;
          flex-direction: row;
+         justify-content: space-between;
          
          .first {
-            width: 30%;
+            width: 24%;
          }
          .second {
-            width: 70%;
+            width: 75%;
+            text-align: right;
          }
       }
    `
@@ -30,7 +36,7 @@ const NasaCard = props => {
       <Card className="card" style={{ backgroundImage: `url(${props.imgSrc})` }}>
          <div class="info">
             <div class="first">
-               <h2>{props.title}</h2>
+               <h1>{props.title}</h1>
                <h3>{props.date}</h3>
             </div>
             <div class="second">
