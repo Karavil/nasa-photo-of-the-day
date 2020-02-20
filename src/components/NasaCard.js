@@ -6,11 +6,11 @@ const NasaCard = props => {
    return (
       <div className="card" style={{ backgroundImage: `url(${props.imgSrc})` }}>
          <div class="info">
-            <div class="left">
+            <div class="first">
                <h2>{props.title}</h2>
                <h3>{props.date}</h3>
             </div>
-            <div class="right">
+            <div class="second">
                <p>{props.info}</p>
             </div>
          </div>

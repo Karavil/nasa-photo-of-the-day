@@ -1,7 +1,8 @@
 
 .card {
    position: relative;
-   height: 50vw;
+   height: 100vh;
+   width: 50%;
    overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -20,23 +21,17 @@
 
 
    display: flex;
+   flex-direction: column;
    justify-content: space-between;
    align-items: center;
 
    padding: 30px 40px;
 }
 
-.left {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   height: 100%;
-   width: 30%;
+.first {
+   width: 100%;
 }
 
-.right {
-   width: 68%;
-}
 h2, h3, p {
    margin: 0;
    padding: 0;
@@ -44,13 +39,15 @@ h2, h3, p {
 
 h2 {
    margin-top: 0;
-   font-size: 3vw;
+   font-size: 3rem;
+   line-height: 1;
 }
 
 h3 {
    color: rgb(218, 218, 218);
+   margin: 10px 0;
 }
 
 p {
-   font-size: 1vw;
+   font-size: 1.2rem;
 }
