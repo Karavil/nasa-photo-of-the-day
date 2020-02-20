@@ -5,8 +5,6 @@ import NasaCard from "./components/NasaCard";
 
 import { NASA_API_KEY } from "./config.js";
 
-import "./App.css";
-
 const App = () => {
    const [images, setImages] = useState([]);
    const NASA_API = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
@@ -34,7 +32,6 @@ const App = () => {
             }
          })
             .then(function (response) {
-               
                if (response.data.media_type === 'image') {
                   setImages(images => [...images, response.data]);
                }
