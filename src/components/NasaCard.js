@@ -15,7 +15,7 @@ const NasaCard = props => {
          left: 0;
 
          width: 100%;
-         padding: 20px;
+         padding: 10px 35px;
 
          background: rgba(0, 0, 0, 0.70);
 
@@ -27,7 +27,7 @@ const NasaCard = props => {
             width: 24%;
          }
          .second {
-            width: 75%;
+            width: 72%;
             text-align: right;
          }
       }
@@ -37,7 +37,7 @@ const NasaCard = props => {
          <div class="info">
             <div class="first">
                <h1>{props.title}</h1>
-               <h3>{props.date}</h3>
+               <h3><i>{props.date}</i></h3>
             </div>
             <div class="second">
                <p>{props.info}</p>

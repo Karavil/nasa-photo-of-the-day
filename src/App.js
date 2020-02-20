@@ -18,7 +18,15 @@ const App = () => {
       h1 {
          font-size: 3rem;
          font-weight: 900;
-         margin: 0;
+         margin: 1.2rem 0 0;
+      }
+
+      h3 {
+         font-weight: 800;
+      }
+
+      p {
+         font-size: 1.2rem;
       }
    `;
    return (
